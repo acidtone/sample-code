@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Hamburger Menu Toggle</title>
+  <!-- Non-relevant styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* By default, hide menu on mobile (desktop is handled in the media query below) */
+    nav ul {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+
+    @media (orientation: landscape) {
+      /* Apply these styles when the screen is in 'landscape' orientation (i.e. horizontal nav on desktop) */
+      nav ul {
+        /* Horizontal nav on desktop */
+        display: flex;
+      }
+
+      nav ul li {
+        /* This is a shorthand for `flex: 1 1 auto`. 
+        The items will grow to fill any empty space equally. */
+        flex: auto;
+      }
+
+      /* Don't show hamburger menu on desktop */
+      nav button {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <button class="btn">Menu Toggle</button>
+    <ul>
+      <li><a href="#">Fighter</a></li>
+      <li><a href="#">Barbarian</a></li>
+      <li><a href="#">Bard</a></li>
+      <li><a href="#">Rogue</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    // Declare our element variables
+    const button = document.querySelector('.btn');
+    const menu = document.querySelector('nav ul');
+
+    // function statement
+    function eventHandler() {
+      // console.log('Menu is toggled');
+
+      // This line of code runs only when `button` is clicked. The 'visible' class will the removed/added (or toggled) each time this event handler is invoked
+      menu.classList.toggle('visible');
+    }
+
+    // The code in the `eventHandler` function (defined above) will be run (or "invoked") each time `button` is clicked
+    button.addEventListener('click', eventHandler);
+
+  </script>
+</body>
+</html>

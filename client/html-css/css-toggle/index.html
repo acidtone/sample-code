@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Toggle</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .fancy-bg {
+      background: rebeccapurple;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn">Toggle</button>
+  <script>
+    // Declare variables like this instead of adding an id attribute
+    const body = document.querySelector('body');
+    
+    // Any valid CSS selector works; it will return the first element it finds
+    const button = document.querySelector('.btn');
+    
+    // Function to toggle a class name
+    function eventHandler() {
+
+      // If 'fancy-bg' exists, remove it; otherwise, add it
+      body.classList.toggle('fancy-bg');
+
+    }
+
+    // `eventHandler` will be invoked when `button` is clicked
+    button.addEventListener("click", eventHandler);
+
+  </script>
+</body>
+</html>

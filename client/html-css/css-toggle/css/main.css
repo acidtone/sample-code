@@ -1,0 +1,22 @@
+/*************/
+/* Side Code */
+/*************/
+
+body {
+  /* Reset */
+  margin: 0;
+
+  /* Layout */
+  /* full viewport height */
+  min-height: 100vh;
+
+  /* centre items horizonally and vertically within a flex
+ container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: .5em 1em;
+}
